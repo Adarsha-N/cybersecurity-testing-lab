@@ -1,0 +1,50 @@
+=== WEEK 4 MODULE 1 AUTHENTICATION TEST SUMMARY ===
+
+Target:
+POST /patient/login.php
+
+Observed behavior:
+
+1. Single quote test
+Input caused:
+mysqli_query() SQL syntax error
+
+2. Boolean FALSE test
+Input:
+test' AND '1'='2' --
+
+Result:
+HTTP 200
+Username not found
+Response size: 2281 bytes
+
+3. Boolean TRUE test
+Input:
+test' AND '1'='1' --
+
+Result:
+HTTP 200
+Username not found
+Response size: 2281 bytes
+
+4. Authentication bypass test
+Input:
+' OR '1'='1' --
+
+Result:
+HTTP 200
+Username not found
+No redirect
+No authenticated portal access observed
+
+Conclusion:
+User-controlled input appears to reach a database query because
+a single quote produced a MySQL query syntax error.
+
+However, the tested boolean conditions produced identical responses,
+and the authentication-bypass test did not grant access.
+
+SQL injection is therefore an observed security concern, but
+successful authentication bypass was NOT demonstrated in this test.
+
+No password guessing or brute-force testing was performed.

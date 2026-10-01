@@ -1,0 +1,32 @@
+=== PATIENT LOGIN SECURITY HEADER CHECK ===
+
+Target:
+https://medirozahospital.com/patient/login.php
+
+HTTP Status:
+HTTP/2 200
+
+Server:
+LiteSpeed
+
+Technology Disclosure:
+X-Powered-By: PHP/8.2.33
+
+Session Cookie:
+PHPSESSID observed with Secure attribute.
+
+Cookie attributes not observed:
+HttpOnly
+SameSite
+
+Common security headers not observed:
+Content-Security-Policy
+Strict-Transport-Security
+X-Frame-Options
+X-Content-Type-Options
+Referrer-Policy
+Permissions-Policy
+
+Note:
+Absence of these headers is documented as a security configuration observation.
+Exploitability/impact was not established during this reconnaissance module.

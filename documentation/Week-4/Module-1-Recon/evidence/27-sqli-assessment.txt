@@ -1,0 +1,25 @@
+=== SQL INJECTION ASSESSMENT ===
+
+Initial single-quote tests:
+A single quote in the username parameter caused a MySQL mysqli_query()
+SQL syntax error.
+
+Boolean comparison tests:
+FALSE condition returned:
+Username not found
+HTTP 200
+Size 2281 bytes
+
+TRUE condition returned:
+Username not found
+HTTP 200
+Size 2281 bytes
+
+Assessment:
+The single-quote error indicates that user-controlled input reaches a
+database query in a potentially unsafe manner.
+
+Boolean-based behavior was not demonstrated by the initial true/false
+tests because both responses were identical.
+
+Authentication-bypass testing remains to be assessed.

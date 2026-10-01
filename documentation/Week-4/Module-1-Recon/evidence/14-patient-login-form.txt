@@ -1,0 +1,26 @@
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <h2>Patient Portal</h2>
+    <p class="sub">Sign in to view your lab reports and results.</p>
+        <form method="POST" action="login.php">
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="off">
+        <label class="show-pass">
+          <input type="checkbox" onclick="var p=document.getElementById('password');p.type=this.checked?'text':'password'"> Show password
+        </label>
+      </div>
+      <button class="btn-submit" type="submit">Sign in</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">&copy; 2026 Mediroza General Hospital. All rights reserved. Powered by Mediroza CMS</div>
+  </div>

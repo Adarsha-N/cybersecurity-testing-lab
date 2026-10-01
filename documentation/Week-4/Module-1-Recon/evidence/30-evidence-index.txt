@@ -1,0 +1,49 @@
+=== WEEK 4 MODULE 1 EVIDENCE INDEX ===
+
+01-http-headers.txt
+02-dns.txt
+03-whatweb.txt
+04-waf.txt
+05-homepage.html
+05-response-headers.txt
+06-robots.txt
+07-sitemap.xml
+08-old-directory.html
+08-staff-login-headers.txt
+08-staff-login.html
+09-patient-login-headers.txt
+09-patient-login.html
+09-staff-directory.html
+10-patient-directory.html
+11-db-headers.txt
+12-reports-directory.html
+
+14-patient-login-form.txt
+14-portal-headers.txt
+15-download-headers.txt
+16-invalid-login-response.txt
+17-login-test-summary.txt
+18-logout-headers.txt
+19-patient-security-headers.txt
+20-security-header-summary.txt
+21-login-form-analysis.txt
+22-input-test-results.txt
+23-sqli-error-evidence.txt
+24-sqli-false.html
+25-sqli-true.html
+26-sqli-auth-test.txt
+27-sqli-assessment.txt
+28-authentication-test-summary.txt
+29-sqli-final-assessment.txt
+
+recon-summary.txt
+
+Assessment:
+Reconnaissance identified several security observations,
+including information disclosure through SQL errors and
+potential username enumeration.
+
+Boolean SQL injection and authentication bypass were not
+demonstrated.
+
+No unauthorized access to patient records was established.

@@ -1,0 +1,11 @@
+HTTP/2 200 
+x-powered-by: PHP/8.2.33
+set-cookie: PHPSESSID=s6hmqb3c1ugb2ct1vr141uq798; path=/; secure
+expires: Thu, 19 Nov 1981 08:52:00 GMT
+cache-control: no-store, no-cache, must-revalidate
+pragma: no-cache
+content-type: text/html; charset=UTF-8
+date: Thu, 01 Oct 2026 09:14:33 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+

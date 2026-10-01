@@ -1,0 +1,18 @@
+=== PATIENT LOGIN FORM ANALYSIS ===
+
+Endpoint:
+POST /patient/login.php
+
+Parameters:
+username
+password
+
+Observed:
+- POST method
+- No visible CSRF token
+- No hidden authentication-related field observed
+- Server returns a distinct "Username not found" response for the invalid test account
+
+Assessment:
+The form exposes username and password parameters for server-side processing.
+No exploitability is claimed from these observations alone.

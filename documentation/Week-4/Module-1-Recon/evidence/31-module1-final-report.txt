@@ -1,0 +1,148 @@
+=== WEEK 4 MODULE 1 — RECONNAISSANCE FINAL REPORT ===
+
+Target:
+https://medirozahospital.com
+
+Scope:
+Web application reconnaissance and authentication-surface
+assessment.
+
+1. TECHNOLOGY DISCOVERY
+
+Web Server:
+LiteSpeed
+
+PHP:
+8.2.33
+
+CMS:
+Mediroza CMS 1.4.2
+
+WAF:
+LiteSpeed WAF
+
+
+2. INTERESTING APPLICATION PATHS
+
+/patient/
+/staff/
+/old/
+/patient/reports/
+
+
+3. PATIENT AUTHENTICATION
+
+Endpoint:
+POST /patient/login.php
+
+Parameters:
+username
+password
+
+CSRF:
+No visible CSRF token observed.
+
+Invalid Login:
+HTTP 200
+
+Observed message:
+"Username not found"
+
+Assessment:
+The distinct username error may permit username enumeration.
+This was not fully confirmed because no authorized valid test
+account was available.
+
+
+4. SESSION MANAGEMENT
+
+Cookie:
+PHPSESSID
+
+Observed:
+Secure attribute
+
+Not observed:
+HttpOnly
+SameSite
+
+Protected endpoints:
+
+/patient/portal.php
+302 -> login.php
+
+/patient/download.php
+302 -> login.php
+
+/patient/logout.php
+302 -> login.php
+
+Session invalidation was not verified because an authenticated
+test session was unavailable.
+
+
+5. SECURITY HEADERS
+
+Observed:
+X-Powered-By: PHP/8.2.33
+Server: LiteSpeed
+
+Not observed:
+Content-Security-Policy
+Strict-Transport-Security
+X-Frame-Options
+X-Content-Type-Options
+Referrer-Policy
+Permissions-Policy
+
+
+6. SQL INPUT TESTING
+
+A single quote supplied to the username parameter produced a
+MySQL mysqli_query() SQL syntax error.
+
+Evidence:
+23-sqli-error-evidence.txt
+
+Boolean tests:
+
+FALSE:
+Username not found
+HTTP 200
+Size 2281
+
+TRUE:
+Username not found
+HTTP 200
+Size 2281
+
+Assessment:
+The SQL error demonstrates that malformed user input reaches
+database-related processing and that database errors may be
+exposed to the client.
+
+The TRUE/FALSE tests produced identical responses.
+
+SQL injection authentication bypass was NOT demonstrated.
+
+
+7. SECURITY CONCLUSION
+
+The reconnaissance identified:
+
+- Technology disclosure
+- Potential username enumeration
+- Missing visible CSRF token
+- Missing common security headers
+- Session cookie attribute observations
+- SQL error disclosure
+
+No unauthorized patient-record access was established.
+
+No authentication bypass was established.
+
+No data extraction was performed.
+
+Exploitability of the identified observations requires
+controlled validation using an authorized test account or
+dedicated lab environment.

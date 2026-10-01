@@ -1,0 +1,20 @@
+=== TEST: test'&password=x ===
+HTTP=200 SIZE=2440
+<div class="alert">Warning: mysqli_query(): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '&#039;' at line 1
+
+=== TEST: test"&password=x ===
+HTTP=200 SIZE=2281
+<div class="alert">Username not found
+
+=== TEST: test%27&password=x ===
+HTTP=200 SIZE=2440
+<div class="alert">Warning: mysqli_query(): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '&#039;' at line 1
+
+=== TEST: test%22&password=x ===
+HTTP=200 SIZE=2281
+<div class="alert">Username not found
+
+=== TEST: test&lt;&password=x ===
+HTTP=200 SIZE=2281
+<div class="alert">Username not found
+
