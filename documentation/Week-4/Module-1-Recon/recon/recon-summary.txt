@@ -1,0 +1,27 @@
+=== WEEK 4 MODULE 1 RECON SUMMARY ===
+
+[1] Target
+https://medirozahospital.com
+
+[2] IP
+199.188.201.16
+
+[3] Web Server
+LiteSpeed
+
+[4] WAF
+LiteSpeed WAF
+
+[5] CMS
+Mediroza CMS 1.4.2
+
+[6] Interesting Paths
+/patient/
+/staff/
+/old/
+
+[7] Backup Found
+/old/mediroza_db_backup_2019.sql
+
+[8] Patient Reports
+/patient/reports/ -> 403 Forbidden
